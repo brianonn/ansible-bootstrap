@@ -1,0 +1,12 @@
+---
+- hosts: all
+  become: yes
+  become_method: sudo
+  gather_facts: no
+  tasks:
+  - name: "sudo to root"
+    command: /usr/bin/whoami
+    register: whoami
+  - debug: msg="{{ whoami.stdout }}"
+  - debug: msg="{{ whoami.stderr }}"
+

@@ -1,0 +1,8 @@
+---
+- hosts: all
+  tasks:
+    - shell: echo "Hello from Ansible!"
+      register: result
+    - debug: msg="{{ result.stdout }}"
+
+
